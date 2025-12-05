@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ram [TU APELLIDO] - Senior AI Architect</title>
-    <meta name="description" content="Senior AI Automation Architect & Full Stack Engineer with 15+ years of experience. Founder of CITEC and Creator of MoniPro.">
+    <title>Ramón Avendaño Saleh - Senior AI Architect</title>
+    <meta name="description" content="Senior AI Automation Architect & Full Stack Engineer. Founder of CITEC.">
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --accent-color: #2980b9;
-            --text-color: #333;
-            --bg-color: #f9fbfd;
-            --white: #ffffff;
-            --section-bg: #ffffff;
+            /* Paleta Futurista Dark Tech */
+            --bg-color: #0f1115;       /* Fondo casi negro */
+            --card-bg: #161b22;        /* Fondo de tarjetas */
+            --primary-text: #e6edf3;   /* Texto principal blanco suave */
+            --secondary-text: #8b949e; /* Texto secundario gris */
+            --accent-color: #00d4ff;   /* Cian Eléctrico para destacar */
+            --border-color: #30363d;   /* Bordes sutiles */
+            --hover-color: #1f6feb;    
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            color: var(--text-color);
+            color: var(--primary-text);
             background-color: var(--bg-color);
             margin: 0;
             padding: 0;
@@ -27,121 +29,139 @@
         .container {
             max-width: 900px;
             margin: 40px auto;
-            background: var(--section-bg);
+            background: var(--card-bg);
             padding: 50px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.05); /* Sutil resplandor futurista */
         }
 
         /* Header */
         header {
             text-align: center;
-            border-bottom: 2px solid #f0f0f0;
+            border-bottom: 1px solid var(--border-color);
             padding-bottom: 30px;
             margin-bottom: 40px;
         }
 
         h1 {
-            color: var(--primary-color);
+            color: var(--primary-text);
             margin: 0;
             font-size: 2.8em;
             font-weight: 700;
-            letter-spacing: -0.5px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .subtitle {
-            font-size: 1.3em;
+            font-size: 1.2em;
             color: var(--accent-color);
             font-weight: 500;
             margin-top: 10px;
+            letter-spacing: 0.5px;
         }
 
         .contact-info {
             margin-top: 20px;
-            font-size: 1em;
-            color: #666;
+            font-size: 0.95em;
+            color: var(--secondary-text);
         }
 
         .contact-info a {
-            color: var(--accent-color);
+            color: var(--primary-text);
             text-decoration: none;
             margin: 0 10px;
-            font-weight: 500;
+            transition: color 0.3s;
         }
 
         .contact-info a:hover {
-            text-decoration: underline;
+            color: var(--accent-color);
         }
 
         /* Sections */
         section {
-            margin-bottom: 40px;
+            margin-bottom: 45px;
         }
 
         h2 {
-            color: var(--primary-color);
-            font-size: 1.6em;
-            border-bottom: 2px solid #f0f0f0;
+            color: var(--accent-color);
+            font-size: 1.4em;
+            border-bottom: 1px solid var(--border-color);
             padding-bottom: 10px;
             margin-bottom: 25px;
             text-transform: uppercase;
-            font-size: 1.1em;
-            letter-spacing: 1px;
-            font-weight: 700;
+            letter-spacing: 1.5px;
+            font-weight: 600;
         }
 
         h3 {
             margin: 0 0 5px 0;
-            color: var(--primary-color);
-            font-size: 1.3em;
+            color: var(--primary-text);
+            font-size: 1.2em;
         }
 
         p {
             margin-top: 0;
+            color: #c9d1d9;
+        }
+
+        a.text-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--accent-color);
+        }
+        
+        a.text-link:hover {
+            color: #fff;
+            border-bottom: 1px solid #fff;
         }
 
         /* Skills Grid */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
+            gap: 20px;
         }
 
         .skill-category {
-            background: #f8f9fa;
+            background: rgba(255,255,255,0.03);
             padding: 15px;
             border-radius: 6px;
-            border-left: 4px solid var(--accent-color);
+            border: 1px solid var(--border-color);
         }
 
         .skill-category strong {
             display: block;
-            color: var(--primary-color);
-            margin-bottom: 8px;
-            font-size: 1.1em;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            font-size: 1em;
+            text-transform: uppercase;
+            font-size: 0.9em;
         }
 
         /* Experience & Projects */
         .job, .project-item {
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
         .job-meta {
-            color: #7f8c8d;
-            font-weight: 500;
+            color: var(--secondary-text);
+            font-size: 0.9em;
             margin-bottom: 12px;
             display: block;
+            font-family: 'Courier New', Courier, monospace; /* Toque técnico */
         }
 
         .tech-tag {
             display: inline-block;
-            background: #e1f0fa;
+            background: rgba(0, 212, 255, 0.1);
             color: var(--accent-color);
             padding: 2px 8px;
             border-radius: 4px;
-            font-size: 0.8em;
+            font-size: 0.75em;
             font-weight: 600;
-            margin-right: 5px;
+            margin-right: 6px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
             vertical-align: middle;
         }
 
@@ -152,7 +172,7 @@
 
         li {
             margin-bottom: 8px;
-            color: #444;
+            color: #c9d1d9;
         }
 
         /* Responsive */
@@ -161,16 +181,11 @@
                 margin: 0;
                 border-radius: 0;
                 padding: 25px;
+                border: none;
             }
-            h1 { font-size: 2.2em; }
+            h1 { font-size: 2em; }
             .contact-info { display: flex; flex-direction: column; gap: 10px; }
-        }
-
-        @media print {
-            body { background: white; }
-            .container { box-shadow: none; margin: 0; width: 100%; max-width: 100%; padding: 0; }
-            a { text-decoration: none; color: black; }
-            .skill-category { border: 1px solid #ddd; }
+            .contact-info span, .contact-info a { margin: 0; }
         }
     </style>
 </head>
@@ -178,14 +193,15 @@
 
     <div class="container">
         <header>
-            <h1>Ram [TU APELLIDO]</h1>
+            <h1>Ramón Avendaño Saleh</h1>
             <div class="subtitle">Senior AI Automation Architect | Full Stack Engineer | Founder</div>
             <div class="contact-info">
-                <span>📍 Santiago, Chile (GMT-3)</span>
-                <br class="mobile-break" style="display:none">
-                <a href="mailto:[TU EMAIL]">[TU EMAIL]</a> |
-                <a href="[TU LINKEDIN]" target="_blank">LinkedIn</a> |
-                <a href="[TU GITHUB]" target="_blank">GitHub</a>
+                <span>📍 Santiago, Chile</span> |
+                <a href="mailto:ravendano@citec.cl">ravendano@citec.cl</a> |
+                <a href="https://wa.me/56975192782" target="_blank">+56 9 7519 2782</a>
+                <br style="margin-top:10px; display:block">
+                <a href="https://www.linkedin.com/in/ramón-avendaño-69819546" target="_blank">LinkedIn</a> |
+                <a href="https://github.com/InnerRam" target="_blank">GitHub</a>
             </div>
         </header>
 
@@ -195,7 +211,7 @@
                 Senior Technology Architect and Founder with <strong>15+ years of experience</strong> bridging the gap between Industrial Automation, SaaS, and Artificial Intelligence.
             </p>
             <p>
-                I don't just write code; I build systems. As the founder of CITEC, I’ve architected end-to-end solutions—from hardware sensors to cloud-based AI agents. My focus is on <strong>pragmatic innovation</strong>: using LLMs (OpenAI/Claude) and automation workflows to solve real business inefficiencies.
+                I don't just write code; I build systems. As the founder of <a href="https://citec.cl" target="_blank" class="text-link">CITEC</a>, I’ve architected end-to-end solutions—from hardware sensors to cloud-based AI agents. My focus is on <strong>pragmatic innovation</strong>: using LLMs (OpenAI/Claude) and automation workflows to solve real business inefficiencies.
             </p>
             <p>
                 I combine the reliability of an industrial engineer with the agility of a modern full-stack developer. I am currently available for <strong>fractional (part-time) roles</strong> to help forward-thinking companies automate workflows and build scalable MVP products.
@@ -207,7 +223,7 @@
             <div class="skills-grid">
                 <div class="skill-category">
                     <strong>🤖 AI & Automation</strong>
-                    OpenAI API (GPT-4), LangChain, Anthropic Claude, Make.com (Integromat), n8n, RAG Implementation, Autonomous Agents.
+                    OpenAI API (GPT-4), LangChain, Anthropic Claude, Make.com, n8n, RAG Implementation, Autonomous Agents.
                 </div>
                 <div class="skill-category">
                     <strong>💻 Full Stack</strong>
@@ -263,7 +279,7 @@
             
             <div class="job">
                 <h3>Founder & Lead Engineer</h3>
-                <span class="job-meta">CITEC (Industrial Automation & Tech) | Santiago, Chile | 2010 – Present</span>
+                <span class="job-meta"><a href="https://citec.cl" target="_blank" class="text-link">CITEC</a> (Industrial Automation & Tech) | Santiago, Chile | 2010 – Present</span>
                 <ul>
                     <li>Founded and led a technology firm specializing in robotics, software development, and automation.</li>
                     <li>Led the digital transformation of internal operations using custom <strong>AI Agents</strong>, automating administrative overhead.</li>
@@ -285,8 +301,8 @@
         <section id="education">
             <h2>Education</h2>
             <div class="job">
-                <h3>[TU TÍTULO UNIVERSITARIO, ej: B.S. Industrial Engineering / Computer Science]</h3>
-                <span class="job-meta">[NOMBRE DE TU UNIVERSIDAD], Chile</span>
+                <h3>Ingeniero Electrónico</h3>
+                <span class="job-meta">Universidad Tecnológica Metropolitana, Chile</span>
             </div>
         </section>
 
