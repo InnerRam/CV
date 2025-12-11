@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramón Avendaño Saleh - Senior AI Architect</title>
-    <meta name="description" content="Senior AI Automation Architect & Full Stack Engineer. Founder of CITEC.">
+    <title>Ramón Avendaño Saleh - Senior AI Architect & Fractional CTO</title>
+    <meta name="description" content="Senior AI & IoT Solutions Architect available for Fractional and Contract roles. Specialist in LLMs, Industrial Automation, and Full Stack Engineering.">
     <style>
         :root {
             /* Paleta Futurista Dark Tech */
@@ -14,11 +14,11 @@
             --secondary-text: #8b949e; /* Texto secundario gris */
             --accent-color: #00d4ff;   /* Cian Eléctrico para destacar */
             --border-color: #30363d;   /* Bordes sutiles */
-            --hover-color: #1f6feb;    
+            --success-color: #238636;  /* Verde para disponibilidad */
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
             color: var(--primary-text);
             background-color: var(--bg-color);
@@ -33,7 +33,7 @@
             padding: 50px;
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            box-shadow: 0 0 30px rgba(0, 212, 255, 0.05); /* Sutil resplandor futurista */
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.05);
         }
 
         /* Header */
@@ -44,45 +44,61 @@
             margin-bottom: 40px;
         }
         
-        /* Profile Photo - NUEVO ESTILO */
         .profile-photo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%; /* Hace la imagen perfectamente redonda */
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
             object-fit: cover;
             margin-bottom: 20px;
-            border: 3px solid var(--accent-color); /* Borde cian eléctrico */
-            box-shadow: 0 0 15px rgba(0, 212, 255, 0.4); /* Resplandor sutil */
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
         }
 
         h1 {
             color: var(--primary-text);
             margin: 0;
-            font-size: 2.8em;
+            font-size: 2.5em;
             font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .subtitle {
-            font-size: 1.2em;
-            color: var(--accent-color);
-            font-weight: 500;
-            margin-top: 10px;
             letter-spacing: 0.5px;
         }
 
+        .subtitle {
+            font-size: 1.3em;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-top: 8px;
+            margin-bottom: 15px;
+        }
+
+        .availability-badge {
+            display: inline-block;
+            background: rgba(35, 134, 54, 0.15);
+            color: #3fb950;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            border: 1px solid rgba(35, 134, 54, 0.4);
+            margin-bottom: 15px;
+        }
+
         .contact-info {
-            margin-top: 20px;
-            font-size: 0.95em;
+            margin-top: 15px;
+            font-size: 1em;
             color: var(--secondary-text);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .contact-info a {
             color: var(--primary-text);
             text-decoration: none;
-            margin: 0 10px;
             transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .contact-info a:hover {
@@ -90,9 +106,7 @@
         }
 
         /* Sections */
-        section {
-            margin-bottom: 45px;
-        }
+        section { margin-bottom: 50px; }
 
         h2 {
             color: var(--accent-color);
@@ -108,12 +122,13 @@
         h3 {
             margin: 0 0 5px 0;
             color: var(--primary-text);
-            font-size: 1.2em;
+            font-size: 1.25em;
         }
 
         p {
             margin-top: 0;
             color: #c9d1d9;
+            text-align: justify;
         }
 
         a.text-link {
@@ -136,31 +151,37 @@
 
         .skill-category {
             background: rgba(255,255,255,0.03);
-            padding: 15px;
+            padding: 18px;
             border-radius: 6px;
             border: 1px solid var(--border-color);
+            transition: transform 0.2s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
         }
 
         .skill-category strong {
             display: block;
             color: var(--accent-color);
-            margin-bottom: 10px;
-            font-size: 1em;
+            margin-bottom: 12px;
             text-transform: uppercase;
-            font-size: 0.9em;
+            font-size: 0.85em;
+            letter-spacing: 0.5px;
         }
 
         /* Experience & Projects */
-        .job, .project-item {
-            margin-bottom: 35px;
-        }
+        .job, .project-item { margin-bottom: 40px; }
 
         .job-meta {
             color: var(--secondary-text);
             font-size: 0.9em;
             margin-bottom: 12px;
             display: block;
-            font-family: 'Courier New', Courier, monospace; /* Toque técnico */
+            font-family: 'Courier New', Courier, monospace;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 10px;
         }
 
         .tech-tag {
@@ -171,20 +192,13 @@
             border-radius: 4px;
             font-size: 0.75em;
             font-weight: 600;
-            margin-right: 6px;
+            margin-left: 8px;
             border: 1px solid rgba(0, 212, 255, 0.2);
             vertical-align: middle;
         }
 
-        ul {
-            padding-left: 20px;
-            margin-top: 10px;
-        }
-
-        li {
-            margin-bottom: 8px;
-            color: #c9d1d9;
-        }
+        ul { padding-left: 20px; margin-top: 10px; }
+        li { margin-bottom: 8px; color: #c9d1d9; }
 
         /* Responsive */
         @media (max-width: 650px) {
@@ -193,10 +207,32 @@
                 border-radius: 0;
                 padding: 25px;
                 border: none;
+                box-shadow: none;
             }
             h1 { font-size: 2em; }
-            .contact-info { display: flex; flex-direction: column; gap: 10px; }
-            .contact-info span, .contact-info a { margin: 0; }
+            .subtitle { font-size: 1.1em; }
+            .contact-info { flex-direction: column; gap: 8px; align-items: center; }
+        }
+
+        /* Print Styles - Crucial for PDF generation */
+        @media print {
+            body { background-color: #fff; color: #000; }
+            .container { 
+                box-shadow: none; 
+                border: none; 
+                max-width: 100%; 
+                margin: 0; 
+                padding: 0;
+                background: #fff;
+            }
+            h1, h3 { color: #000; }
+            p, li { color: #333; }
+            .job-meta { color: #555; border-color: #000; }
+            .tech-tag { border: 1px solid #333; color: #000; background: none; }
+            a { color: #000; text-decoration: underline; }
+            .subtitle, h2, .skill-category strong { color: #000; }
+            .profile-photo { border-color: #333; box-shadow: none; }
+            .skill-category { border: 1px solid #ccc; }
         }
     </style>
 </head>
@@ -204,30 +240,38 @@
 
     <div class="container">
         <header>
-            <img src="ramon_photo.jpg" alt="Ramón Avendaño Saleh - Profile Photo" class="profile-photo">
+            <img src="ramon_photo.jpg" alt="Ramón Avendaño Saleh" class="profile-photo">
 
             <h1>Ramón Avendaño Saleh</h1>
-            <div class="subtitle">Senior AI Automation Architect | Full Stack Engineer | Founder</div>
+            <div class="subtitle">Senior AI & IoT Solutions Architect | Fractional CTO</div>
+            
+            <div class="availability-badge">
+                ● Available for Remote / Fractional Roles (USA/EU)
+            </div>
+
             <div class="contact-info">
-                <span>📍 Santiago, Chile</span> |
-                <a href="mailto:ravendano@citec.cl">ravendano@citec.cl</a> |
+                <span>📍 Santiago, Chile (US Timezone Aligned)</span>
+                <span>|</span>
+                <a href="mailto:ravendano@citec.cl">ravendano@citec.cl</a>
+                <span>|</span>
                 <a href="https://wa.me/56975192782" target="_blank">+56 9 7519 2782</a>
-                <br style="margin-top:10px; display:block">
-                <a href="https://www.linkedin.com/in/ramón-avendaño-69819546" target="_blank">LinkedIn</a> |
+                <span>|</span>
+                <a href="https://www.linkedin.com/in/ramón-avendaño-69819546" target="_blank">LinkedIn</a>
+                <span>|</span>
                 <a href="https://github.com/InnerRam" target="_blank">GitHub</a>
             </div>
         </header>
 
         <section id="summary">
-            <h2>Professional Summary</h2>
+            <h2>Professional Profile</h2>
             <p>
-                Senior Technology Architect and Founder with <strong>15+ years of experience</strong> bridging the gap between Industrial Automation, SaaS, and Artificial Intelligence.
+                Senior Technology Architect with <strong>15+ years of experience</strong> bridging the gap between Industrial Hardware (IoT), SaaS, and Generative AI. I specialize in helping companies architect and deploy scalable automation systems without the overhead of a full-time executive.
             </p>
             <p>
-                I don't just write code; I build systems. As the founder of <a href="https://citec.cl" target="_blank" class="text-link">CITEC</a>, I’ve architected end-to-end solutions—from hardware sensors to cloud-based AI agents. My focus is on <strong>pragmatic innovation</strong>: using LLMs (OpenAI/Claude) and automation workflows to solve real business inefficiencies.
+                As a <strong>Fractional CTO and Lead Engineer</strong>, I bring a unique "Builder-Architect" mindset: I don't just design systems; I code the critical infrastructure. My background combines formal Industrial Engineering reliability with the agility of modern Full Stack development.
             </p>
             <p>
-                Combining a formal Engineering background with over a decade of rigorous <strong>self-directed technical specialization</strong>, I offer the reliability of an industrial engineer and the agility of a modern full-stack developer.
+                <strong>Value Proposition:</strong> Proven ability to execute complex RAG/LLM integrations and IoT deployments independently. Based in Chile (aligned with ET/PT timezones), ensuring seamless synchronous collaboration with US and European teams.
             </p>
         </section>
 
@@ -235,100 +279,88 @@
             <h2>Technical Arsenal</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <strong>🤖 AI & Automation</strong>
-                    OpenAI API (GPT-4), LangChain, Anthropic Claude, Make.com, n8n, RAG Implementation, Autonomous Agents.
+                    <strong>🤖 AI & LLM Ops</strong>
+                    OpenAI API (GPT-4o), Anthropic Claude, LangChain, RAG Architecture, Vector Databases (Pinecone/Chroma), Prompt Engineering, AI Agents (n8n/Make).
                 </div>
                 <div class="skill-category">
-                    <strong>💻 Full Stack</strong>
-                    Python (Django/FastAPI), React.js, Node.js, TypeScript, SQL (PostgreSQL), Mobile (Android).
+                    <strong>💻 Full Stack Engineering</strong>
+                    Python (Django/FastAPI), JavaScript/TypeScript (React.js, Node.js), PostgreSQL, REST APIs, Docker, AWS Deployment.
                 </div>
                 <div class="skill-category">
-                    <strong>⚡ IoT & Embedded</strong>
-                    C/C++ Firmware, MQTT Protocols, PLC Programming, PCB Design, Industrial Sensors, Gateway Architecture.
+                    <strong>⚡ Industrial IoT (HardTech)</strong>
+                    C/C++ Firmware, MQTT/LoRaWAN, PLC Interfacing (Modbus), Custom PCB Design, Edge Computing Gateways.
                 </div>
                 <div class="skill-category">
-                    <strong>🚀 Core Competencies</strong>
-                    SaaS Architecture, Technical Leadership, MVP Development, Agile (Scrum), Remote Team Management.
+                    <strong>🚀 Strategic Leadership</strong>
+                    Fractional CTO Services, Technical Roadmapping, Agile/Scrum Management, MVP Rapid Prototyping, Remote Team Leadership.
                 </div>
             </div>
-        </section>
-
-        <section id="projects">
-            <h2>Featured Projects</h2>
-            
-            <div class="project-item">
-                <h3>AI Corporate Brain (Internal Tool) <span class="tech-tag">AI Engineer</span></h3>
-                <p>An autonomous AI agent system designed to handle internal scheduling and customer support L1.</p>
-                <ul>
-                    <li>Implemented <strong>RAG (Retrieval-Augmented Generation)</strong> to allow the AI to answer queries based on private company documentation securely.</li>
-                    <li>Integrated with <strong>OpenAI API</strong> and Vector Databases to provide accurate, context-aware responses.</li>
-                    <li><strong>Impact:</strong> Reduced manual support ticket resolution time by 40% and automated internal scheduling.</li>
-                </ul>
-            </div>
-
-            <div class="project-item">
-                <h3>VENTIUM: Smart Climate Control (BMS) <span class="tech-tag">Lead Architect & Developer</span></h3>
-                <p>A centralized IoT climate control solution enabling automated management of FANCOIL units for large-scale office buildings.</p>
-                <ul>
-                    <li>Designed the full stack: Custom hardware nodes, C/C++ Firmware, and the Cloud Dashboard Software.</li>
-                    <li>Successfully deployed at <strong>WeWork</strong> locations, covering 15 floors and orchestrating over <strong>500+ electronic devices</strong>.</li>
-                    <li>Achieved real-time bidirectional communication using MQTT, allowing centralized facility management to optimize energy consumption.</li>
-                </ul>
-            </div>
-
-            <div class="project-item">
-                <h3>INTA Nutrition Platform (SaaS) <span class="tech-tag">Lead Programmer</span></h3>
-                <p>Custom nutritional analysis software developed for the Institute of Nutrition and Food Technology (University of Chile) & CIAPEC.</p>
-                <ul>
-                    <li>Built a complex "Multiple-Pass 24-Hour Recall" survey engine to analyze population dietary habits.</li>
-                    <li>Integrated the <strong>USDA National Nutrient Database</strong> for precise caloric and micronutrient calculation.</li>
-                    <li><strong>Longevity & Scale:</strong> Active since 2016. Processed over <strong>22,000 surveys</strong>, managing a database of 9,000+ food items and 2,000+ Chilean recipes.</li>
-                </ul>
-            </div>
-
-            <div class="project-item">
-                <h3>MoniPro (SaaS Platform) <span class="tech-tag">Founder & Architect</span></h3>
-                <p>Architected and built a complete B2B SaaS solution for field work monitoring and industrial management.</p>
-                <ul>
-                    <li>Designed the multi-tenant database structure and scalable REST API using <strong>Python (Django)</strong>.</li>
-                    <li>Developed a real-time <strong>React</strong> dashboard for industrial clients to track KPIs and field assets.</li>
-                    <li>Implemented automated invoicing, geolocation tracking, and user permission hierarchies.</li>
-                </ul>
-            </div>
-
-            <div class="project-item">
-                <h3>Industrial Print Reporter (IoT Hardware) <span class="tech-tag">Product Owner</span></h3>
-                <p>A non-invasive industrial monitoring device designed for the pharmaceutical and food industries.</p>
-                <ul>
-                    <li>Engineered a "Black Box" solution that interfaces with <strong>Industrial PLCs</strong> to read analog/digital variables (Temperature, Pressure, RPM).</li>
-                    <li>Designed a stainless steel, sanitary-grade hardware case housing the programmable controller and thermal printer.</li>
-                    <li>Enables legacy machinery to generate physical audit tickets for compliance and process verification without altering the machine's core logic.</li>
-                </ul>
-            </div>
-
         </section>
 
         <section id="experience">
             <h2>Professional Experience</h2>
             
             <div class="job">
-                <h3>Founder & Lead Engineer</h3>
-                <span class="job-meta"><a href="https://citec.cl" target="_blank" class="text-link">CITEC</a> (Industrial Automation & Tech) | Santiago, Chile | 2010 – Present</span>
+                <h3>Principal AI Architect & Lead Engineer</h3>
+                <span class="job-meta">CITEC (Tech Consultancy) | 2010 – Present</span>
+                <p><em>Operating as a specialized consultancy firm providing high-level architecture and development for international clients.</em></p>
                 <ul>
-                    <li>Founded and led a technology firm specializing in robotics, software development, and automation.</li>
-                    <li>Led the digital transformation of internal operations using custom <strong>AI Agents</strong>, automating administrative overhead.</li>
-                    <li>Managed technical roadmaps, architectural decisions, and mentored junior developers.</li>
-                    <li>Delivered high-stakes projects for clients like WeWork, University of Chile, and Industrial Manufacturers.</li>
+                    <li><strong>Strategic Consultancy:</strong> Acting as Fractional CTO for diverse clients, leading digital transformation and automation roadmaps.</li>
+                    <li><strong>AI Implementation:</strong> Engineered custom <strong>AI Agents</strong> for internal process automation, reducing administrative overhead by 40% through intelligent document processing.</li>
+                    <li><strong>Project Leadership:</strong> Delivered end-to-end hardtech and software solutions for high-profile clients including <strong>WeWork</strong> and the <strong>University of Chile</strong>.</li>
+                    <li><strong>Mentorship:</strong> Managed remote development teams, conducting code reviews and architectural decision-making.</li>
                 </ul>
             </div>
 
             <div class="job">
-                <h3>Senior Software Engineer (Freelance / Contract)</h3>
-                <span class="job-meta">Various International Clients | Remote | 2008 – 2010</span>
+                <h3>Senior Software Engineer (Contract)</h3>
+                <span class="job-meta">International Remote Contracts | 2008 – 2010</span>
                 <ul>
-                    <li>Developed custom web applications using Python frameworks and JavaScript.</li>
-                    <li>Integrated third-party APIs (Stripe, Twilio) to enhance product functionality and monetization.</li>
-                    <li>Optimized legacy codebases to improve performance and maintainability.</li>
+                    <li>Developed custom web applications using Python frameworks and JavaScript for US/EU based clients.</li>
+                    <li>Integrated payment gateways (Stripe) and communication APIs (Twilio) to enhance SaaS product functionality.</li>
+                    <li>Refactored legacy codebases to improve performance, scalability, and maintainability.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Featured Deployments</h2>
+            
+            <div class="project-item">
+                <h3>AI Corporate Brain (RAG System) <span class="tech-tag">AI Engineer</span></h3>
+                <p>An autonomous AI agent system designed to handle internal scheduling and L1 customer support.</p>
+                <ul>
+                    <li>Architected a <strong>RAG (Retrieval-Augmented Generation)</strong> pipeline to query private company documentation securely.</li>
+                    <li>Integrated <strong>OpenAI API</strong> with vector search to reduce hallucination and provide context-aware answers.</li>
+                    <li><strong>Impact:</strong> Drastically reduced manual support tickets and automated meeting scheduling.</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <h3>VENTIUM: Enterprise IoT BMS <span class="tech-tag">Lead Architect</span></h3>
+                <p>A full-stack IoT climate control solution managing HVAC systems for large-scale office buildings.</p>
+                <ul>
+                    <li>Developed the complete stack: Custom C++ Firmware, Hardware Nodes, and Cloud Dashboard (React/Django).</li>
+                    <li><strong>Scale:</strong> Deployed at <strong>WeWork</strong> (15 floors), orchestrating 500+ real-time devices via MQTT.</li>
+                    <li>Enabled centralized energy optimization through bidirectional cloud-to-device communication.</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <h3>INTA Nutrition SaaS Platform <span class="tech-tag">Lead Developer</span></h3>
+                <p>Nutritional analysis software for the Institute of Nutrition (University of Chile) & CIAPEC.</p>
+                <ul>
+                    <li>Built a "Multiple-Pass 24-Hour Recall" survey engine utilizing the <strong>USDA National Nutrient Database</strong>.</li>
+                    <li><strong>Impact:</strong> Active since 2016, processing over <strong>22,000 surveys</strong> for national health studies.</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <h3>Industrial Print Reporter (Edge Hardware) <span class="tech-tag">Product Owner</span></h3>
+                <p>Non-invasive monitoring device for pharmaceutical/food industry compliance.</p>
+                <ul>
+                    <li>Engineered a "Black Box" solution interfacing with legacy <strong>Industrial PLCs</strong> to digitize analog variables.</li>
+                    <li>Designed sanitary-grade hardware to generate physical audit trails without altering machine logic.</li>
                 </ul>
             </div>
         </section>
@@ -339,8 +371,8 @@
             <div class="job">
                 <h3>Electronics Engineer</h3>
                 <span class="job-meta">Universidad Tecnológica Metropolitana, Chile</span>
-                <p style="font-size: 0.9em; margin-top: 5px;">
-                    Focus on Control Systems, Industrial Hardware, and Logic Design.
+                <p style="font-size: 0.9em; margin-top: 5px; color: #8b949e;">
+                    Focus: Control Systems, Industrial Hardware, and Logic Design.
                 </p>
             </div>
 
@@ -350,15 +382,11 @@
             </div>
 
             <div class="job">
-                <h3>Continuous Professional Development (Autodidact)</h3>
-                <span class="job-meta">Independent Technical Curriculum | 2010 – Present</span>
-                <p>
-                    Rigorous, project-based self-education running parallel to my professional career, mastering technologies not covered in traditional engineering curricula.
+                <h3>Continuous Professional Development</h3>
+                <span class="job-meta">Autodidact | 2010 – Present</span>
+                <p style="font-size: 0.9em; margin-top: 5px; color: #8b949e;">
+                    Rigorous, project-based mastery of Modern Web Stacks, Cloud Architecture, and Generative AI technologies parallel to professional practice.
                 </p>
-                <ul>
-                    <li><strong>Full Stack Engineering:</strong> Advanced proficiency in Python (Django/FastAPI), JavaScript (React/Node), and Cloud Architecture acquired through official documentation and complex project implementation.</li>
-                    <li><strong>AI & Automation:</strong> Deep exploration of LLM frameworks, Vector Databases, and Agentic workflows.</li>
-                </ul>
             </div>
         </section>
 
