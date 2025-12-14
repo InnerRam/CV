@@ -7,14 +7,13 @@
     <meta name="description" content="Senior AI & IoT Solutions Architect available for Fractional and Contract roles. Specialist in LLMs, Industrial Automation, and Full Stack Engineering.">
     <style>
         :root {
-            /* Paleta Futurista Dark Tech */
-            --bg-color: #0f1115;       /* Fondo casi negro */
-            --card-bg: #161b22;        /* Fondo de tarjetas */
-            --primary-text: #e6edf3;   /* Texto principal blanco suave */
-            --secondary-text: #8b949e; /* Texto secundario gris */
-            --accent-color: #00d4ff;   /* Cian Eléctrico para destacar */
-            --border-color: #30363d;   /* Bordes sutiles */
-            --success-color: #238636;  /* Verde para disponibilidad */
+            /* Paleta Web (Modo Oscuro) */
+            --bg-color: #0f1115;
+            --card-bg: #161b22;
+            --primary-text: #e6edf3;
+            --secondary-text: #8b949e;
+            --accent-color: #00d4ff;
+            --border-color: #30363d;
         }
 
         body {
@@ -36,7 +35,7 @@
             box-shadow: 0 0 30px rgba(0, 212, 255, 0.05);
         }
 
-        /* Header */
+        /* Header Styles */
         header {
             text-align: center;
             border-bottom: 1px solid var(--border-color);
@@ -96,16 +95,11 @@
             color: var(--primary-text);
             text-decoration: none;
             transition: color 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 5px;
         }
 
-        .contact-info a:hover {
-            color: var(--accent-color);
-        }
+        .contact-info span { margin: 0 5px; color: var(--secondary-text); }
 
-        /* Sections */
+        /* General Layout */
         section { margin-bottom: 50px; }
 
         h2 {
@@ -125,22 +119,7 @@
             font-size: 1.25em;
         }
 
-        p {
-            margin-top: 0;
-            color: #c9d1d9;
-            text-align: justify;
-        }
-
-        a.text-link {
-            color: var(--accent-color);
-            text-decoration: none;
-            border-bottom: 1px dotted var(--accent-color);
-        }
-        
-        a.text-link:hover {
-            color: #fff;
-            border-bottom: 1px solid #fff;
-        }
+        p { margin-top: 0; color: #c9d1d9; text-align: justify; }
 
         /* Skills Grid */
         .skills-grid {
@@ -154,12 +133,6 @@
             padding: 18px;
             border-radius: 6px;
             border: 1px solid var(--border-color);
-            transition: transform 0.2s;
-        }
-
-        .skill-category:hover {
-            transform: translateY(-2px);
-            border-color: var(--accent-color);
         }
 
         .skill-category strong {
@@ -168,10 +141,9 @@
             margin-bottom: 12px;
             text-transform: uppercase;
             font-size: 0.85em;
-            letter-spacing: 0.5px;
         }
 
-        /* Experience & Projects */
+        /* Experience Items */
         .job, .project-item { margin-bottom: 40px; }
 
         .job-meta {
@@ -200,39 +172,113 @@
         ul { padding-left: 20px; margin-top: 10px; }
         li { margin-bottom: 8px; color: #c9d1d9; }
 
-        /* Responsive */
-        @media (max-width: 650px) {
-            .container {
-                margin: 0;
-                border-radius: 0;
-                padding: 25px;
-                border: none;
-                box-shadow: none;
-            }
-            h1 { font-size: 2em; }
-            .subtitle { font-size: 1.1em; }
-            .contact-info { flex-direction: column; gap: 8px; align-items: center; }
-        }
-
-        /* Print Styles - Crucial for PDF generation */
+        /* =========================================
+           IMPRESIÓN PROFESIONAL (PDF FIX)
+           ========================================= */
         @media print {
-            body { background-color: #fff; color: #000; }
-            .container { 
-                box-shadow: none; 
-                border: none; 
-                max-width: 100%; 
-                margin: 0; 
-                padding: 0;
-                background: #fff;
+            /* 1. Reset Total a Blanco y Negro */
+            :root {
+                --primary-text: #000000 !important;
+                --secondary-text: #333333 !important;
+                --accent-color: #000000 !important; /* Todo negro para máxima legibilidad */
+                --border-color: #cccccc !important;
             }
-            h1, h3 { color: #000; }
-            p, li { color: #333; }
-            .job-meta { color: #555; border-color: #000; }
-            .tech-tag { border: 1px solid #333; color: #000; background: none; }
-            a { color: #000; text-decoration: underline; }
-            .subtitle, h2, .skill-category strong { color: #000; }
-            .profile-photo { border-color: #333; box-shadow: none; }
-            .skill-category { border: 1px solid #ccc; }
+
+            body {
+                background-color: #ffffff !important;
+                color: #000000 !important;
+                -webkit-print-color-adjust: exact;
+                font-size: 11pt; /* Tamaño óptimo para papel */
+            }
+
+            .container {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 15px !important;
+                border: none !important;
+                box-shadow: none !important;
+                background: white !important;
+            }
+
+            /* 2. Forzar texto visible */
+            p, h1, h2, h3, li, a, span, strong {
+                color: #000000 !important;
+                text-shadow: none !important;
+            }
+
+            /* 3. Arreglar Header y Contacto */
+            header {
+                border-bottom: 2px solid #000 !important;
+                margin-bottom: 20px !important;
+                padding-bottom: 10px !important;
+            }
+
+            .profile-photo {
+                border-color: #333 !important;
+                box-shadow: none !important;
+                width: 100px; /* Más pequeño para ahorrar espacio */
+                height: 100px;
+            }
+
+            /* Aquí arreglamos el desorden del contacto */
+            .contact-info {
+                display: block !important; /* Quitar Flexbox para impresión */
+                text-align: center !important;
+            }
+            .contact-info a, .contact-info span {
+                display: inline-block;
+                margin: 0 8px !important;
+                white-space: nowrap; /* Evita que el email se parta */
+            }
+            /* Ocultar pipes feos si molestan, o dejarlos si se ven bien */
+            
+            /* 4. Skills en columnas limpias */
+            .skills-grid {
+                grid-template-columns: 1fr 1fr !important; /* Forzar 2 columnas */
+                gap: 15px !important;
+            }
+            .skill-category {
+                border: 1px solid #999 !important;
+                background: none !important;
+                page-break-inside: avoid;
+            }
+
+            /* 5. Manejo inteligente de saltos de página */
+            section {
+                margin-bottom: 25px !important;
+                page-break-inside: auto; 
+            }
+            
+            .job, .project-item {
+                page-break-inside: avoid; /* No romper un trabajo a la mitad */
+                margin-bottom: 20px !important;
+            }
+
+            h2 {
+                border-bottom: 1px solid #000 !important;
+                margin-top: 10px !important;
+                page-break-after: avoid; /* Título pegado al contenido */
+            }
+
+            /* 6. Detalles finos */
+            .job-meta {
+                color: #444 !important;
+                border-left: 3px solid #000 !important; /* Barra negra sólida */
+                font-weight: bold;
+            }
+            
+            .tech-tag {
+                border: 1px solid #000 !important;
+                color: #000 !important;
+                background: none !important;
+                font-weight: bold;
+            }
+            
+            a { text-decoration: none !important; color: #000 !important; }
+            
+            /* Opcional: Ocultar la insignia verde para que se vea más ejecutivo */
+            .availability-badge { display: none !important; } 
         }
     </style>
 </head>
