@@ -6,6 +6,11 @@
     <title>Ramón Avendaño Saleh - Senior AI Architect & Fractional CTO</title>
     <meta name="description" content="Senior AI & IoT Solutions Architect available for Fractional and Contract roles. Specialist in LLMs, Industrial Automation, and Full Stack Engineering.">
     <style>
+        * {
+            box-sizing: border-box; /* CLAVE: Evita que el padding rompa el ancho */
+            -webkit-box-sizing: border-box;
+        }
+
         :root {
             /* Paleta Web (Modo Oscuro) */
             --bg-color: #0f1115;
@@ -173,112 +178,98 @@
         li { margin-bottom: 8px; color: #c9d1d9; }
 
         /* =========================================
-           IMPRESIÓN PROFESIONAL (PDF FIX)
+           2. MODO IMPRESIÓN (SOLUCIÓN FINAL)
            ========================================= */
         @media print {
-            /* 1. Reset Total a Blanco y Negro */
+            /* Configuración de la hoja física */
+            @page {
+                size: A4;
+                margin: 1.5cm; /* Margen seguro para que la impresora no corte */
+            }
+
             :root {
                 --primary-text: #000000 !important;
                 --secondary-text: #333333 !important;
-                --accent-color: #000000 !important; /* Todo negro para máxima legibilidad */
+                --accent-color: #000000 !important;
                 --border-color: #cccccc !important;
             }
 
             body {
                 background-color: #ffffff !important;
                 color: #000000 !important;
-                -webkit-print-color-adjust: exact;
-                font-size: 11pt; /* Tamaño óptimo para papel */
+                font-size: 10pt; /* Letra ajustada para evitar desbordes */
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
             }
 
             .container {
                 width: 100% !important;
-                max-width: 100% !important;
+                max-width: none !important;
                 margin: 0 !important;
-                padding: 0 15px !important;
+                padding: 0 !important; /* El padding ya lo da el @page margin */
                 border: none !important;
                 box-shadow: none !important;
-                background: white !important;
             }
 
-            /* 2. Forzar texto visible */
-            p, h1, h2, h3, li, a, span, strong {
-                color: #000000 !important;
-                text-shadow: none !important;
-            }
-
-            /* 3. Arreglar Header y Contacto */
-            header {
-                border-bottom: 2px solid #000 !important;
-                margin-bottom: 20px !important;
-                padding-bottom: 10px !important;
-            }
-
-            .profile-photo {
-                border-color: #333 !important;
-                box-shadow: none !important;
-                width: 100px; /* Más pequeño para ahorrar espacio */
-                height: 100px;
-            }
-
-            /* Aquí arreglamos el desorden del contacto */
+            /* --- ARREGLO 1: CONTACTO ORDENADO --- */
             .contact-info {
-                display: block !important; /* Quitar Flexbox para impresión */
+                display: block !important;
                 text-align: center !important;
             }
-            .contact-info a, .contact-info span {
-                display: inline-block;
-                margin: 0 8px !important;
-                white-space: nowrap; /* Evita que el email se parta */
-            }
-            /* Ocultar pipes feos si molestan, o dejarlos si se ven bien */
             
-            /* 4. Skills en columnas limpias */
-            .skills-grid {
-                grid-template-columns: 1fr 1fr !important; /* Forzar 2 columnas */
-                gap: 15px !important;
-            }
-            .skill-category {
-                border: 1px solid #999 !important;
-                background: none !important;
-                page-break-inside: avoid;
-            }
+            /* Ocultar las barras | verticales */
+            .contact-info span { display: none !important; }
 
-            /* 5. Manejo inteligente de saltos de página */
-            section {
-                margin-bottom: 25px !important;
-                page-break-inside: auto; 
-            }
-            
-            .job, .project-item {
-                page-break-inside: avoid; /* No romper un trabajo a la mitad */
-                margin-bottom: 20px !important;
-            }
-
-            h2 {
-                border-bottom: 1px solid #000 !important;
-                margin-top: 10px !important;
-                page-break-after: avoid; /* Título pegado al contenido */
-            }
-
-            /* 6. Detalles finos */
-            .job-meta {
-                color: #444 !important;
-                border-left: 3px solid #000 !important; /* Barra negra sólida */
-                font-weight: bold;
-            }
-            
-            .tech-tag {
-                border: 1px solid #000 !important;
+            /* Espaciado limpio entre enlaces */
+            .contact-info a {
+                display: inline-block !important;
+                margin: 0 10px !important;
                 color: #000 !important;
-                background: none !important;
-                font-weight: bold;
+                text-decoration: none !important;
+                white-space: nowrap !important; /* Evita que el email se parta en dos */
+            }
+
+            /* --- ARREGLO 2: TEXTO CORTADO A LA DERECHA --- */
+            /* Forzar que el texto justificado no se salga del contenedor */
+            p, li, div {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                max-width: 100% !important;
+            }
+
+            /* --- ARREGLO 3: SKILLS Y CORTES DE PÁGINA --- */
+            .skills-grid {
+                display: block !important; /* Quitamos grid para evitar errores de renderizado */
             }
             
-            a { text-decoration: none !important; color: #000 !important; }
+            .skill-category {
+                border: 1px solid #aaa !important;
+                margin-bottom: 10px !important;
+                page-break-inside: avoid !important; /* No cortar a la mitad */
+                width: 100% !important;
+            }
+
+            .job, .project-item {
+                page-break-inside: avoid !important;
+                border-bottom: 1px dashed #ccc; /* Separador sutil */
+                padding-bottom: 15px;
+                margin-bottom: 15px !important;
+            }
+
+            /* Header compacto */
+            header {
+                margin-bottom: 10px !important;
+                padding-bottom: 10px !important;
+                border-bottom: 2px solid #000 !important;
+            }
             
-            /* Opcional: Ocultar la insignia verde para que se vea más ejecutivo */
-            .availability-badge { display: none !important; } 
+            .profile-photo {
+                width: 90px;
+                height: 90px;
+            }
+            
+            .availability-badge { display: none !important; }
         }
     </style>
 </head>
