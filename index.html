@@ -7,7 +7,7 @@
     <meta name="description" content="Senior AI & IoT Solutions Architect available for Fractional and Contract roles. Specialist in LLMs, Industrial Automation, and Full Stack Engineering.">
     <style>
         /* =========================================
-           1. RESET & VARIABLES (CORE)
+           1. CORE SETTINGS (Global)
            ========================================= */
         * {
             box-sizing: border-box;
@@ -15,7 +15,7 @@
         }
 
         :root {
-            /* Paleta Web (Modo Oscuro Futurista) */
+            /* Variables Web (Dark Mode) */
             --bg-color: #0f1115;
             --card-bg: #161b22;
             --primary-text: #e6edf3;
@@ -45,10 +45,10 @@
         }
 
         /* =========================================
-           2. WEB LAYOUT STYLES
+           2. WEB STYLES (Lo que se ve en pantalla)
            ========================================= */
         
-        /* Header */
+        /* Header & Profile */
         header {
             text-align: center;
             border-bottom: 1px solid var(--border-color);
@@ -94,7 +94,7 @@
             margin-bottom: 15px;
         }
 
-        /* Contacto (Flexbox para Web) */
+        /* Contact Info - Flexbox para pantalla */
         .contact-info {
             margin-top: 15px;
             font-size: 1em;
@@ -117,12 +117,14 @@
 
         .contact-info a:hover { color: var(--accent-color); }
         
+        /* El separador | visible en web */
         .separator {
+            display: inline-block;
             color: var(--secondary-text);
-            margin: 0 5px;
+            margin: 0 2px;
         }
 
-        /* Secciones */
+        /* Sections & Typography */
         section { margin-bottom: 50px; }
 
         h2 {
@@ -144,7 +146,7 @@
 
         p { margin-top: 0; color: #c9d1d9; text-align: justify; }
 
-        /* Skills Grid */
+        /* Skills Grid - Grid para pantalla */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -173,7 +175,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* Items de Trabajo */
+        /* Jobs & Projects */
         .job, .project-item { margin-bottom: 40px; }
 
         .job-meta {
@@ -202,11 +204,10 @@
         ul { padding-left: 20px; margin-top: 10px; }
         li { margin-bottom: 8px; color: #c9d1d9; }
 
-        /* Responsive Móvil */
+        /* Mobile Adjustments */
         @media (max-width: 650px) {
             .container {
                 margin: 0;
-                border-radius: 0;
                 padding: 25px;
                 border: none;
                 box-shadow: none;
@@ -214,22 +215,22 @@
             h1 { font-size: 2em; }
             .subtitle { font-size: 1.1em; }
             .contact-info { flex-direction: column; gap: 8px; }
-            .separator { display: none; } /* Ocultar separadores en móvil */
+            .separator { display: none; }
         }
 
         /* =========================================
-           3. MODO IMPRESIÓN (THE FIX)
+           3. PRINT STYLES (Solo para Impresora/PDF)
            ========================================= */
         @media print {
             @page {
-                margin: 1.5cm;
+                margin: 1cm; /* Margen físico de la hoja */
                 size: A4;
             }
 
-            /* Forzar blanco y negro absoluto */
+            /* Forzar Variables a Blanco y Negro */
             :root {
                 --primary-text: #000000 !important;
-                --secondary-text: #444444 !important;
+                --secondary-text: #333333 !important;
                 --accent-color: #000000 !important;
                 --border-color: #cccccc !important;
                 --bg-color: #ffffff !important;
@@ -237,9 +238,11 @@
             }
 
             body {
-                background-color: #fff !important;
-                color: #000 !important;
-                font-size: 10.5pt;
+                background-color: #ffffff !important;
+                color: #000000 !important;
+                font-size: 10pt; /* Tamaño óptimo lectura */
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
 
             .container {
@@ -251,10 +254,10 @@
                 box-shadow: none !important;
             }
 
-            /* Header Compacto */
+            /* Header Limpio */
             header {
                 border-bottom: 2px solid #000 !important;
-                margin-bottom: 20px !important;
+                margin-bottom: 15px !important;
                 padding-bottom: 10px !important;
             }
 
@@ -263,51 +266,68 @@
                 height: 90px;
                 border-color: #333 !important;
                 box-shadow: none !important;
+                margin-bottom: 10px;
             }
 
-            /* SOLUCIÓN AL DESORDEN DEL CONTACTO */
+            h1 { font-size: 2.2em !important; margin-bottom: 5px; }
+            .subtitle { font-size: 1.1em !important; color: #444 !important; font-weight: bold; margin-bottom: 5px; }
+
+            /* --- ARREGLO CONTACTO PARA IMPRESIÓN --- */
             .contact-info {
-                display: block !important; /* Quitar Flexbox */
+                display: block !important; /* Desactiva Flexbox */
                 text-align: center !important;
             }
             
             .separator {
-                display: none !important; /* OCULTAR LAS BARRAS VERTICALES */
+                display: none !important; /* OCULTA LAS BARRAS VERTICALES */
             }
 
             .contact-info a {
                 display: inline-block !important;
-                margin: 0 12px !important; /* Espacio limpio horizontal */
+                margin: 0 10px !important; /* Espacio horizontal limpio */
                 text-decoration: none !important;
                 color: #000 !important;
                 font-weight: 600;
             }
+            
+            /* Textos Negros */
+            p, li, h2, h3, span { color: #000000 !important; }
+            a { color: #000000 !important; text-decoration: none !important; }
 
-            /* Textos y Enlaces */
-            p, li, h1, h2, h3, span { color: #000 !important; }
-            a { color: #000 !important; text-decoration: none !important; }
-            
-            /* Evitar cortes feos */
-            section { page-break-inside: auto; margin-bottom: 25px !important; }
-            h2 { border-bottom: 1px solid #000 !important; page-break-after: avoid; }
-            
+            /* Estructura */
+            section { page-break-inside: auto; margin-bottom: 20px !important; }
+            h2 { border-bottom: 1px solid #000 !important; page-break-after: avoid; margin-bottom: 15px; }
+
+            /* Evitar cortes feos en trabajos */
             .job, .project-item {
                 page-break-inside: avoid !important;
                 border-bottom: 1px dashed #ccc;
-                padding-bottom: 15px;
+                padding-bottom: 10px;
                 margin-bottom: 15px !important;
             }
 
-            /* Skills sin Grid para que no se rompan */
-            .skills-grid { display: block !important; }
+            /* Skills Legibles */
+            .skills-grid {
+                display: block !important; /* Quita Grid */
+            }
             .skill-category {
                 border: 1px solid #999 !important;
-                margin-bottom: 10px !important;
+                margin-bottom: 8px !important;
                 page-break-inside: avoid !important;
+                padding: 10px !important;
             }
+            .skill-category strong { color: #000 !important; text-decoration: underline; }
 
-            .tech-tag { border: 1px solid #000 !important; color: #000 !important; }
-            .availability-badge { display: none !important; }
+            /* Detalles */
+            .tech-tag { border: 1px solid #000 !important; color: #000 !important; font-weight: bold; }
+            .availability-badge { display: none !important; } /* Ocultar en papel */
+            
+            /* Metadatos de Trabajo */
+            .job-meta {
+                color: #444 !important;
+                font-weight: bold;
+                border-left: 3px solid #000 !important;
+            }
         }
     </style>
 </head>
@@ -340,7 +360,7 @@
         <section id="summary">
             <h2>Professional Profile</h2>
             <p>
-                Senior Technology Architect with <strong>18+ years of experience</strong> bridging the gap between Industrial Hardware (IoT), SaaS, and Generative AI. I specialize in helping companies architect and deploy scalable automation systems without the overhead of a full-time executive.
+                Senior Technology Architect with <strong>18+ years of experience</strong>  bridging the gap between Industrial Hardware (IoT), SaaS, and Generative AI. I specialize in helping companies architect and deploy scalable automation systems without the overhead of a full-time executive.
             </p>
             <p>
                 As a <strong>Fractional CTO and Lead Engineer</strong>, I bring a unique "Builder-Architect" mindset: I don't just design systems; I code the critical infrastructure. My background combines formal Industrial Engineering reliability with the agility of modern Full Stack development.
@@ -359,7 +379,7 @@
                 </div>
                 <div class="skill-category">
                     <strong>⚡ Industrial IoT & Robotics</strong>
-                    C/C++ Firmware, MQTT/LoRaWAN, PLC Interfacing (Modbus), Robotic Arms (Handling/Welding), Custom PCB Design, Edge Computing.
+                    C/C++ Firmware, MQTT/LoRaWAN, PLC Interfacing (Modbus), Robotic Arms (Handling/Welding)[cite: 16], Custom PCB Design, Edge Computing.
                 </div>
                 <div class="skill-category">
                     <strong>💻 Full Stack Engineering</strong>
@@ -381,9 +401,9 @@
                 <p><em>Operating as a specialized consultancy firm providing high-level architecture, robotics, and automation for international clients.</em></p>
                 <ul>
                     <li><strong>Strategic Consultancy:</strong> Acting as Fractional CTO for diverse clients, leading digital transformation and automation roadmaps.</li>
-                    <li><strong>Industrial Automation:</strong> Led the implementation of **Robotic Arms** for welding and handling tasks at major industrial clients like **Almex** and **Cristalerías de Chile**.</li>
+                    <li><strong>Industrial Robotics:</strong> Led the implementation of **Robotic Arms** for welding and handling tasks at major industrial clients like **Almex** and **Cristalerías de Chile**[cite: 17].</li>
                     <li><strong>AI Implementation:</strong> Engineered custom **AI Agents** for internal process automation, reducing administrative overhead by 40% through intelligent document processing.</li>
-                    <li><strong>Project Leadership:</strong> Delivered end-to-end hardtech and software solutions for high-profile clients including **WeWork** and the **University of Chile**.</li>
+                    <li><strong>Project Leadership:</strong> Delivered end-to-end hardtech and software solutions for high-profile clients including **WeWork**, **CCU**, and **Laboratorios SAVAL**[cite: 13, 113, 110].</li>
                 </ul>
             </div>
 
@@ -403,11 +423,11 @@
 
             <div class="project-item">
                 <h3>MIC: Intelligent Industrial Monitoring (IoT) <span class="tech-tag">Lead Architect</span></h3>
-                <p>A wireless, real-time monitoring ecosystem for critical industrial variables (Humidity, Temp, Levels, Flooding).</p>
+                <p>A wireless, real-time monitoring ecosystem for critical industrial variables (Humidity, Temp, Levels, Flooding)[cite: 30].</p>
                 <ul>
                     <li><strong>Architecture:</strong> Designed custom hardware nodes communicating via RF/LoRa to a central Cloud Dashboard.</li>
-                    <li><strong>Impact:</strong> Deployed successfully at **Laboratorios SAVAL** (Flood Detection) and **Hielos Fiesta** (Production Line Monitoring).</li>
-                    <li><strong>Scale:</strong> Currently managing 24/7 critical alerts for **WeWork** HVAC systems, preventing costly infrastructure failures.</li>
+                    <li><strong>Impact:</strong> Deployed successfully at **Laboratorios SAVAL** (Flood Detection) and **Hielos Fiesta** (Production Line Monitoring)[cite: 31].</li>
+                    <li><strong>Scale:</strong> Currently managing 24/7 critical alerts for **WeWork** HVAC systems, preventing costly infrastructure failures[cite: 31].</li>
                 </ul>
             </div>
             
@@ -423,7 +443,7 @@
 
             <div class="project-item">
                 <h3>INTA Nutrition SaaS Platform <span class="tech-tag">Lead Developer</span></h3>
-                <p>Nutritional analysis software for the Institute of Nutrition (University of Chile) & CIAPEC.</p>
+                <p>Nutritional analysis software for the Institute of Nutrition (University of Chile) & CIAPEC[cite: 20, 112].</p>
                 <ul>
                     <li>Built a "Multiple-Pass 24-Hour Recall" survey engine utilizing the **USDA National Nutrient Database**.</li>
                     <li><strong>Impact:</strong> Active since 2016, processing over **22,000 surveys** for national health studies.</li>
@@ -432,7 +452,7 @@
 
             <div class="project-item">
                 <h3>Industrial Print Reporter (Legacy Bridge) <span class="tech-tag">Product Owner</span></h3>
-                <p>Non-invasive monitoring device for pharmaceutical/food industry compliance.</p>
+                <p>Non-invasive monitoring device for pharmaceutical/food industry compliance (SRI)[cite: 35].</p>
                 <ul>
                     <li>Engineered a "Black Box" solution interfacing with legacy **Industrial PLCs** to digitize analog variables.</li>
                     <li>Designed sanitary-grade hardware to generate physical audit trails without altering machine logic.</li>
